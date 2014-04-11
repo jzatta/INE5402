@@ -17,7 +17,7 @@ public class Principal{
     Ponto outroPonto = new Ponto(x,y);
     aInterface.mostreDistanciaOrigem(umPonto.informeCoordenadas(),
                                      umPonto.informeDistanciaOrigem());
-		aInterface.mostreDistanciaOrigem(outroPonto.informeCoordenadas(),
+    aInterface.mostreDistanciaOrigem(outroPonto.informeCoordenadas(),
                                      outroPonto.informeDistanciaOrigem());
     aInterface.mostreDistanciaPontos(umPonto.informeCoordenadas(),
                                      outroPonto.informeCoordenadas(),
