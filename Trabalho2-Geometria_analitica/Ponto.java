@@ -35,11 +35,15 @@ public class Ponto{
 		return y;
 	}
 	
+	public String informeCoordenadas(){
+		return new String("(" + x + "," + y + ")");
+	}
+	
 	public double informeDistanciaPonto(Ponto p){
-		return Math.sqrt(Math.Pow(x - p.informeX(),2)+Math.Pow(y - p.informeY(),2));
+		return Math.sqrt(Math.pow(x - p.informeX(),2)+Math.pow(y - p.informeY(),2));
 	}
 	
 	public double informeDistanciaOrigem(){
-		return Math.sqrt(x * x) + (y * y));
+		return Math.sqrt((x * x) + (y * y));
 	}
 }

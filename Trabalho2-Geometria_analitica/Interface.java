@@ -17,19 +17,24 @@ public class Interface{
     return Double.parseDouble(JOptionPane.showInputDialog(null, msg));
   }
   
-  public double pegueBase(){
-    return pegueValor("Informe a base do retangulo (separado por um ponto):");
+  public double pegueX(){
+    return pegueValor("Informe o valor do ponto no eixo das abscissas\
+		(separado por um ponto):");
   }
   
-  public double pegueAltura(){
-    return pegueValor("Informe a altura do retangulo (separado por um ponto):");
+  public double pegueY(){
+    return pegueValor("Informe o valor do ponto no eixo das ordenadas\
+		(separado por um ponto):");
   }
   
-  public void mostreArea(double vArea){
-    JOptionPane.showMessageDialog(null,"A area do retangulo e de: " + vArea);
+  public void mostreDistanciaOrigem(String nomePonto, double distancia){
+    JOptionPane.showMessageDialog(null,"A distancia do ponto " + nomePonto +
+		" até a origem é de: " + distancia + " u.c.");
   }
   
-  public void mostrePerimetro(double vPerimetro){
-    JOptionPane.showMessageDialog(null,"O perimetro do retangulo e de: " + vPerimetro);
+  public void mostreDistanciaPontos(String nomePonto1, String nomePonto2,
+																		double distancia){
+    JOptionPane.showMessageDialog(null,"A distancia entre os pontos " + nomePonto1
+		+ " e " + nomePonto2 + " é de: " + distancia + " u.c.");
   }
 }
