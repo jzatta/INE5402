@@ -1,7 +1,7 @@
 /*
  * @autor Juliano Kasmirski Zatta
  * @turma 1208A
- * @Disponivel em: https://github.com/jzatta/INE5402_T1.git
+ * @Disponivel em: https://github.com/jzatta/INE5402.git
  *
  */
 
