@@ -17,11 +17,21 @@ public class Relogio{
 	}
 	
 	public Relogio(int vHora, int vMinuto, int vSegundo){
-		segundo = vSegundo % 60;
-		vMinuto += vSegundo / 60;
-		minuto = vMinuto % 60;
-		vHora += vMinuto / 60;
-		hora = vHora % 24;
+		if (vSegundo < 0 && vSegundo >= 60){
+			segundo = 0;
+		}	else {
+			segundo = vSegundo;
+		}
+		if (vMinuto < 0 && vMinuto >= 60){
+			minuto = 0;
+		} else {
+			minuto = vMinuto;
+		}
+		if (vHora < 0 && vHora >= 24){
+			hora = 0;
+		} else {
+			hora = vHora;
+		}
 	}
 	
 	public String fornecaHorario(){
