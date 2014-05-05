@@ -6,19 +6,15 @@
 JC=javac
 JAVA=java
 
-Principal.class: Principal.java
+OBJECTS=Principal.class Interface.class Relogio.class
+
+%.class: %.java
 	$(JC) $<
 
-Relogio.class: Relogio.java
-	$(JC) $<
-
-Interface.class: Interface.java
-	$(JC) $<
-
-all: Principal.class Interface.class Relogio.class
+all: $(OBJECTS)
 
 run: all
 	$(JAVA) Principal
 
 clean: 
-	del *.class
+	rm *.class
