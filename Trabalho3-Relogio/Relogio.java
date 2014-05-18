@@ -17,17 +17,17 @@ public class Relogio{
 	}
 	
 	public Relogio(int vHora, int vMinuto, int vSegundo){
-		if (vSegundo < 0 && vSegundo >= 60){
+		if (vSegundo < 0 || vSegundo >= 60){
 			segundo = 0;
 		}	else {
 			segundo = vSegundo;
 		}
-		if (vMinuto < 0 && vMinuto >= 60){
+		if (vMinuto < 0 || vMinuto >= 60){
 			minuto = 0;
 		} else {
 			minuto = vMinuto;
 		}
-		if (vHora < 0 && vHora >= 24){
+		if (vHora < 0 || vHora >= 24){
 			hora = 0;
 		} else {
 			hora = vHora;
@@ -72,6 +72,4 @@ public class Relogio{
 		}
 		return;
 	}
-	
-	
 }

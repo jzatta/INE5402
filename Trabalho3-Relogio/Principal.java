@@ -4,8 +4,6 @@
  * @Disponivel em: https://github.com/jzatta/INE5402.git
  *
  */
- 
-import javax.swing.JOptionPane;
 
 public class Principal{
     public static void main(String[] p){
@@ -13,7 +11,6 @@ public class Principal{
         Relogio maiorHorario = new Relogio();
         Relogio tempRelogio;
         boolean horarioNulo = false;
-				System.out.println((-10 % 3));
         do{
 					tempRelogio = aInterface.pegueRelogio();
 					if (maiorHorario.horarioMaior(tempRelogio)){

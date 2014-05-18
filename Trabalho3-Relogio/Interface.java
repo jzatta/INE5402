@@ -14,7 +14,7 @@ public class Interface{
   }
   
   public int pegueValor(String msg){
-    return Integer.parseInt(JOptionPane.showInputDialog(null, msg));
+    return Integer.parseInt(JOptionPane.showInputDialog(msg));
   }
   
   public int pegueHora(){
@@ -40,14 +40,16 @@ public class Interface{
   }
   
   public void mostreMaiorHorario(String vHorario){
-    JOptionPane.showMessageDialog(null,"O maior horario fornecido foi:" + vHorario);
+    JOptionPane.showMessageDialog(null,"O maior horario fornecido foi:" +vHorario);
   }
   
   public void mostreHorarioNulo(boolean vHorarioNulo){
 		if (vHorarioNulo){
-			JOptionPane.showMessageDialog(null,"Foi fornecido pelo menos um horario igual a 0:0:0");
+			JOptionPane.showMessageDialog(null,
+      "Foi fornecido pelo menos um horario igual a 0:0:0");
 		} else {
-			JOptionPane.showMessageDialog(null,"Nao foi fornecido nenhum horario igual a 0:0:0");
+			JOptionPane.showMessageDialog(null,
+      "Nao foi fornecido nenhum horario igual a 0:0:0");
 		}
   }
 }
