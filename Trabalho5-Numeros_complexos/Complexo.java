@@ -8,14 +8,10 @@
 public class Complexo{
 	private double parteReal;
 	private double parteImaginaria;
-	private double modulo;
-	private double angulo;
 	
 	public Complexo(double vReal, double vImaginaria){
 		parteReal = vReal;
 		parteImaginaria = vImaginaria;
-		modulo = moduloComplexo();
-		angulo = anguloComplexo();
 	}
 	
 	public double informeParteReal(){
@@ -24,18 +20,6 @@ public class Complexo{
 	
 	public double informeParteImaginaria(){
 		return parteImaginaria;
-	}
-	
-	public double informeModulo(){
-		return modulo;
-	}
-	
-	private double moduloComplexo(){
-		return Math.hypot(parteReal,parteImaginaria);
-	}
-	
-	private double anguloComplexo(){
-		return Math.atan2(parteImaginaria,parteReal);
 	}
 	
 	public Complexo informeConjugado(){
@@ -53,23 +37,24 @@ public class Complexo{
 	}
 	
 	public Complexo divideComplexo(Complexo compx){
-		double real;
-		double imaginaria;
-		double mulModulo = this.modulo / compx.modulo;
-		double somaAngulos = this.angulo - compx.angulo;
-		real = mulModulo * Math.cos(somaAngulos);
-		imaginaria = (mulModulo) * Math.sin(somaAngulos);
-		return new Complexo(real,imaginaria);
+		Complexo numerador = multiplicaComplexo(compx.informeConjugado());
+		Complexo denominador = compx.multiplicaComplexo(compx.informeConjugado());
+		return new Complexo(numerador.informeParteReal() / denominador.informeParteReal(),
+												numerador.informeParteImaginaria() / denominador.informeParteReal());
 	}
 	
 	public Complexo multiplicaComplexo(Complexo compx){
 		double real;
 		double imaginaria;
-		double mulModulo = this.modulo * compx.modulo;
-		double somaAngulos = this.angulo + compx.angulo;
-		real = mulModulo * Math.cos(somaAngulos);
-		imaginaria = (mulModulo) * Math.sin(somaAngulos);
+		real = (this.parteReal * compx.parteReal) -
+			(this.parteImaginaria * compx.parteImaginaria);
+		imaginaria = (this.parteReal * compx.parteImaginaria) +
+			(this.parteImaginaria * compx.parteReal);
 		return new Complexo(real,imaginaria);
+	}
+	
+	public double moduloComplexo(){
+		return Math.hypot(parteReal,parteImaginaria);
 	}
 	
 	public boolean igual(Complexo compx){
