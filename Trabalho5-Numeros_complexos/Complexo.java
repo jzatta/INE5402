@@ -38,14 +38,8 @@ public class Complexo{
 		return Math.atan2(parteImaginaria,parteReal);
 	}
 	
-	public String informeConjugado(){
-		if (parteImaginaria > 0){
-			return Double.toString(parteReal) + " - " +
-				Double.toString(parteImaginaria) + "i";
-		} else{
-			return Double.toString(parteReal) + " + " +
-				Double.toString(0.0 - parteImaginaria) + "i";
-		}
+	public Complexo informeConjugado(){
+		return new Complexo(parteReal,-(parteImaginaria));
 	}
 	
 	public Complexo somaComplexo(Complexo compx){
