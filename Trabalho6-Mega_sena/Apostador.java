@@ -9,12 +9,14 @@ public class Apostador extends Pessoa{
 	private int[] aposta;
 	private int nPontos;
 	
-	public Apostador(String vNome, char vSexo, int vIdade, int[] vAposta, int[] resultado){
+	public Apostador(String vNome, char vSexo,
+									 int vIdade, int[] vAposta, int[] resultado){
 		super(vNome,vSexo,vIdade);
 		aposta = new int[vAposta.length];
 		for (int i = 0;i < vAposta.length;i++){
 			aposta[i] = vAposta[i];
 		}
+		ordenaNumeros();
 		nPontos = 0;
 		for (int i = 0;i < aposta.length;i++){
 			for (int j = 0;j < resultado.length;j++){
@@ -52,5 +54,26 @@ public class Apostador extends Pessoa{
 	
 	public int informeNPontos(){
 		return nPontos;
+	}
+	
+	private void ordenaNumeros(){
+		int menor;
+		int local;
+		for (int i = 0;i < 5;i++){
+			menor = aposta[i];
+			local = i;
+			for (int j = i + 1;j < 6;j++){
+				if (aposta[j] < menor){
+					menor = aposta[j];
+					local = j;
+				}
+			}
+			aposta[local] = aposta[i];
+			aposta[i] = menor;
+		}
+	}
+	
+	public String toString(){
+		return informeNome() + " fez " + nPontos + " pontos.";
 	}
 }

@@ -74,8 +74,24 @@ public class Interface {
 		}
 	}
 	
+	public static Apostador pegueApostador(int[] resultado){
+		return new Apostador(pegueNome(),pegueSexo(),
+												 pegueIdade(),pegueApostas(),resultado);
+	}
+	
 	public static void mostreMsg(String msg){
 		JOptionPane.showMessageDialog(null,msg);
+	}
+	
+	public static void mostreConcurso(Concurso c){
+		mostreMsg("Os numeros sorteados foram:\n" + c + "\n" +
+		"O concurso arrecadou " + c.informeArrecadacao() + " reais");
+	}
+	
+	public static boolean temOutro(){
+		int ret = JOptionPane.showConfirmDialog(null,"Inserir mais algum apostador?");
+		if(ret == JOptionPane.OK_OPTION) return true;
+		return false;
 	}
 }
 

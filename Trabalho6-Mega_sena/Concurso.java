@@ -7,6 +7,7 @@
 
 public class Concurso{
 	private int[] numerosSorteados;
+	private int arrecadacao;
 	
 	public Concurso(){
 		numerosSorteados = new int[6];
@@ -22,6 +23,7 @@ public class Concurso{
 			}
 		}
 		ordenaNumeros();
+		arrecadacao = 0;
 	}
 	
 	public int[] informeNumeros(){
@@ -30,6 +32,14 @@ public class Concurso{
 			ret[i] = numerosSorteados[i];
 		}
 		return ret;
+	}
+	
+	public int informeArrecadacao(){
+		return arrecadacao;
+	}
+	
+	public void arrecade(int valor){
+		arrecadacao += valor;
 	}
 	
 	private void ordenaNumeros(){
@@ -50,12 +60,12 @@ public class Concurso{
 	}
 	
 	public String toString(){
-		String ret = "{";
+		String ret = "";
 		int i = 0;
 		for (;i < (6 - 1);i++){
 			ret += numerosSorteados[i] + ", ";
 		}
-		ret += numerosSorteados[i] + "}";
+		ret += numerosSorteados[i];
 		return ret;
 	}
 }

@@ -24,7 +24,7 @@ public class Pessoa{
 		idade = 150;
 	}
 
-	public String informeNome(){
+	public String informeNome (){
 		return nome;
 	}
 		
@@ -32,11 +32,11 @@ public class Pessoa{
 		nome = vN;
 	}
 
-	public char informeSexo(){
+	public char informeSexo (){
 		return sexo;
 	}
 		
-	public boolean recebaValorSexo(char vS){
+	public boolean recebaValorSexo (char vS){
 		vS=Character.toUpperCase(vS);
 		if (vS =='F' || vS=='M')
 		{
@@ -46,19 +46,19 @@ public class Pessoa{
 		return false;
 	}
 
-	public int informeIdade(){
+	public int informeIdade (){
 		return idade;
 	}
 
-	public void recebaValorIdade(int vI){
+	public void recebaValorIdade (int vI){
 		idade = vI;
 	}
 
-	public String toString(){
+	public String toString (){
 		return "Nome: " + nome + "\nSexo: " + sexo + "\nIdade: " + idade;
 	}
 
 	public Pessoa clone (){
-		return new Pessoa (nome, sexo, idade);
+		return new Pessoa(nome, sexo, idade);
 	}
 }
