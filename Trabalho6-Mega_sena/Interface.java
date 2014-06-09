@@ -1,3 +1,10 @@
+/*
+* @autor Juliano Kasmirski Zatta
+* @turma 1208A
+* @Disponivel em: https://github.com/jzatta/INE5402.git
+*
+*/
+
 import javax.swing.JOptionPane;
 
 public class Interface {
