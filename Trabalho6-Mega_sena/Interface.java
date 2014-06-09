@@ -3,10 +3,6 @@ import javax.swing.JOptionPane;
 public class Interface {
   public Interface(){}
   
-  private static double pegueDouble(String msg){
-    return Double.parseDouble(JOptionPane.showInputDialog(msg + "\n(separado por um ponto)"));
-  }
-  
   private static int pegueInt(String msg){
     return Integer.parseInt(JOptionPane.showInputDialog(msg));
   }
@@ -26,7 +22,7 @@ public class Interface {
   private static char pegueSexo(){
     char vSexo;
     do{
-      vSexo = Character.toUpperCase(pegueChar("Informe o sexo do funcionario:"));
+      vSexo = Character.toUpperCase(pegueChar("Informe o sexo do apostador:"));
     } while(vSexo != 'M' && vSexo != 'F' && vSexo != 'O');
     return vSexo;
   }
@@ -89,7 +85,7 @@ public class Interface {
   }
   
   public static boolean temOutro(){
-    int ret = JOptionPane.showConfirmDialog(null,"Inserir mais algum apostador?");
+    int ret = JOptionPane.showConfirmDialog(null,"Inserir mais algum apostador?",null,JOptionPane.OK_CANCEL_OPTION);
     if(ret == JOptionPane.OK_OPTION) return true;
     return false;
   }
